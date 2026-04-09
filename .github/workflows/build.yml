@@ -49,6 +49,10 @@ jobs:
           printf "84831b9409646a918e30573bab4c9c91346d8abd" \
             > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-preview-license
 
+android.sdk_path = /home/runner/.buildozer/android/platform/android-sdk
+android.ndk_path = /home/runner/.buildozer/android/platform/android-ndk-r25b
+android.ant_path = /home/runner/.buildozer/android/platform/apache-ant-1.9.4
+
       - name: Build APK
         run: |
           buildozer -v android debug
