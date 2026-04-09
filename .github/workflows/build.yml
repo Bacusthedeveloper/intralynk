@@ -51,6 +51,11 @@ jobs:
       - name: Set up Android SDK/NDK via buildozer
         run: |
           buildozer android debug 2>&1 | head -5 || true
+    
+      - name: Accept Android licenses
+        run: |
+          yes | sdkmanager --licenses || true
+          yes | sdkmanager "build-tools;33.0.2" "platforms;android-33" || true
 
       - name: Build APK
         run: |
