@@ -51,6 +51,9 @@ jobs:
           export PATH=$PATH:~/.buildozer/android/platform/android-sdk/cmdline-tools/latest/bin
           yes | sdkmanager --licenses || true
           yes | sdkmanager "platforms;android-33" "build-tools;33.0.2" || true
+          mkdir -p ~/.buildozer/android/platform/android-sdk/tools/bin
+          ln -sf ~/.buildozer/android/platform/android-sdk/cmdline-tools/latest/bin/sdkmanager \
+            ~/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager
 
       - name: Build APK
         run: |
